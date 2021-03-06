@@ -101,17 +101,6 @@ class AnimatedSplash extends React.Component {
       }),
     }
 
-    const appScale = {
-      transform: [
-        {
-          scale: loadingProgress.interpolate({
-            inputRange: [0, 7, 100],
-            outputRange: [1.1, 1.05, 1],
-          }),
-        },
-      ],
-    }
-
     return (
       <View style={[styles.container]}>
         <StatusBar
@@ -126,7 +115,7 @@ class AnimatedSplash extends React.Component {
               style={_solidBackground(logoOpacity, backgroundColor)}
             />
           )}
-          <Animated.View style={[appScale, opacityClearToVisible, styles.flex]}>
+          <Animated.View style={[opacityClearToVisible, styles.flex]}>
             {this.renderChildren()}
           </Animated.View>
           {!animationDone && (
